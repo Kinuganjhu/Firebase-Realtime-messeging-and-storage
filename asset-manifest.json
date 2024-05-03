@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Firebase-Realtime-messeging-and-storage/static/css/main.ad49f45b.css",
+    "main.js": "/Firebase-Realtime-messeging-and-storage/static/js/main.8ca93683.js",
+    "static/js/453.3bf43341.chunk.js": "/Firebase-Realtime-messeging-and-storage/static/js/453.3bf43341.chunk.js",
+    "index.html": "/Firebase-Realtime-messeging-and-storage/index.html",
+    "main.ad49f45b.css.map": "/Firebase-Realtime-messeging-and-storage/static/css/main.ad49f45b.css.map",
+    "main.8ca93683.js.map": "/Firebase-Realtime-messeging-and-storage/static/js/main.8ca93683.js.map",
+    "453.3bf43341.chunk.js.map": "/Firebase-Realtime-messeging-and-storage/static/js/453.3bf43341.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad49f45b.css",
+    "static/js/main.8ca93683.js"
+  ]
+}
