@@ -38,3 +38,8 @@ h1 {
 body {
   font-family: Arial, sans-serif;
 }
+.bottom{
+  margin: 4px;
+  position: fixed;
+  bottom: 10px;
+}
