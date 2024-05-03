@@ -26,8 +26,7 @@ export default function SignUp() {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-     const user = userCredential.user;
+      await createUserWithEmailAndPassword(auth, email, password);
       setSuccessMessage('Sign up successful');
       navigate('/Home');
     } catch (error) {
@@ -38,8 +37,7 @@ export default function SignUp() {
   const handleGoogleSignIn = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
+      await signInWithPopup(auth, provider);
       setSuccessMessage('Sign in with Google successful');
       navigate('/Home');
     } catch (error) {
