@@ -1,7 +1,7 @@
 import { database } from '../api/Firebase'
 import { useState, useEffect } from 'react'
 import { ref, push, onValue, remove } from 'firebase/database'
-import Profile from '../api/Profile'
+
 export default function Home() {
   const [message, setMessage] = useState('')
   const [userMessage, setUserMessage] = useState([])
@@ -46,7 +46,6 @@ export default function Home() {
 
   return (
     <>
-    <Profile/>
     <hr/>
       {userMessage.map((item) => (
         <h6 key={item.id}>

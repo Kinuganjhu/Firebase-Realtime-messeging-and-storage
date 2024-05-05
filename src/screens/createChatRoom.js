@@ -3,8 +3,6 @@ import { Modal, Button, Form, Alert, Card } from 'react-bootstrap';
 import { serverTimestamp, ref, push, onValue } from 'firebase/database';
 import { database } from '../api/Firebase';
 import { Link } from 'react-router-dom';
-import Profile from '../api/Profile';
-
 export default function ChatRoom() {
   const [open, setOpen] = useState(false);
   const [roomName, setRoomName] = useState('');
@@ -74,7 +72,7 @@ export default function ChatRoom() {
             <Card>
               <Card.Body>
                 <Card.Title>{roomName}</Card.Title>
-                <Profile roomId={room.id} />
+              
                 <div className="text-center"> 
                   <Link to={`/Home/${room.id}`} className="btn btn-primary">Join {room.roomName}</Link>
                 </div>
