@@ -15,7 +15,7 @@ export default function SignUp() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setSuccessMessage('Sign up successful');
-        navigate('/Home');
+        navigate('/ChatRoom');
       } else {
         setError('');
       }
@@ -28,7 +28,7 @@ export default function SignUp() {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       setSuccessMessage('Sign up successful');
-      navigate('/Home');
+      navigate('/ChatRoom');
     } catch (error) {
       setError(error.message);
     }
@@ -39,7 +39,7 @@ export default function SignUp() {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
       setSuccessMessage('Sign in with Google successful');
-      navigate('/Home');
+      navigate('/ChatRoom');
     } catch (error) {
       setError(error.message);
     }

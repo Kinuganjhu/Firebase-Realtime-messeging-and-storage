@@ -1,14 +1,14 @@
-import { db } from '../api/Firebase'
+import { database } from '../api/Firebase'
 import { useState, useEffect } from 'react'
 import { ref, push, onValue, remove } from 'firebase/database'
 import Profile from '../api/Profile'
-const Home = () => {
+export default function Home() {
   const [message, setMessage] = useState('')
   const [userMessage, setUserMessage] = useState([])
 
   useEffect(() => {
     const fetchMessage = () => {
-      const messageRef = ref(db, 'users')
+      const messageRef = ref(database, 'users')
       onValue(messageRef, (snapshot) => {
         const userMessages = snapshot.val()
         if (userMessages) {
@@ -31,7 +31,7 @@ const Home = () => {
   }
 
   const handleSendMessage = () => {
-    const messageRef = ref(db, 'users')
+    const messageRef = ref(database, 'users')
     push(messageRef, {
       message: message
     })
@@ -39,9 +39,10 @@ const Home = () => {
   }
 
   const handleDeleteMessage = (id) => {
-    const messageRef = ref(db, `users/${id}`)
+    const messageRef = ref(database, `users/${id}`)
     remove(messageRef)
   }
+ 
 
   return (
     <>
@@ -50,15 +51,14 @@ const Home = () => {
       {userMessage.map((item) => (
         <h6 key={item.id}>
           {item.message}
-          <button onClick={() => handleDeleteMessage(item.id)}>delete</button>
+          <button onClick={() => handleDeleteMessage(item.id)}>&times;</button>
         </h6>
       ))}
       <div className='bottom'>
         <input type='text' value={message} placeholder='enter message' onChange={handleChangeText} />
         <button onClick={handleSendMessage}>send message</button>
-      </div>
+      </div> 
+    
     </>
-  )
+  );
 }
-
-export default Home;
